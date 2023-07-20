@@ -1,5 +1,6 @@
 <?php
 
+//Import des Controllers und der Routen
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -17,5 +18,7 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('home');
 });
+
+//Neue Route unter Verwendung einer Klasse und einer Methode aus dem Controller
 
 Route::post('/register', [UserController::class, 'register']);

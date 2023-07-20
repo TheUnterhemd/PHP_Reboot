@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// erstellte Klasse mit unseren Methoden für Umgang mit dem User
+
 class UserController extends Controller
 {
     public function register(Request $request){

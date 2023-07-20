@@ -1,3 +1,4 @@
+<!--Erste view wird eine einfache Register und Login Seite-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
