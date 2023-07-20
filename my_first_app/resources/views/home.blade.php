@@ -9,13 +9,42 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Testing stuff Motherfuckers</h1>
-    <form action="/register" method="POST">
+    <!--@ auth only can be seen by logged in users -->
+    @auth
+
+    <h1>Welcome you are Logged in Dude.</h1>
+
+    <!--Form to logout users -->
+    <form action="/logout" method='POST'>
         @csrf
-        <input type="text" placeholder="name" name="name">
-        <input type="text" placeholder="email" name="email">
-        <input type="password" placeholder="password" name="password">
-        <button>Register</button>
+        <button>Log out</button>
     </form>
+
+
+    <!--@ else will be seen by everyone who isn´t logged in -->    
+    @else
+
+    <h1>Testing stuff Motherfuckers</h1>
+    <div>
+        <form action="/register" method="POST">
+            @csrf
+            <input type="text" placeholder="name" name="name">
+            <input type="text" placeholder="email" name="email">
+            <input type="password" placeholder="password" name="password">
+            <button>Register</button>
+        </form>
+    </div>
+    
+    <div>
+        <form action="/login" method="POST">
+        @csrf
+        <input type="text" placeholder="email" name="loginEmail">
+        <input type="password" placeholder="password" name="loginPassword">
+        <button>Login</button>
+    </form>
+</div>
+    
+
+    @endauth
 </body>
 </html>
